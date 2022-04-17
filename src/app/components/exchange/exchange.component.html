@@ -1,0 +1,52 @@
+<form>
+  <div>
+    <label for="firstCurrency">amount</label>
+    <select
+      (change)="onCurrencyCanage()"
+      name="firstCurrency"
+      id="firstCurrency"
+      [(ngModel)]="firstCurrency"
+    >
+      <option
+        *ngFor="let currency of availableCurrencies"
+        value="{{ currency }}"
+      >
+        {{ currency }}
+      </option>
+    </select>
+    <label for="firstAmount">amount</label>
+    <input
+      (change)="onFirstChange()"
+      (input)="onFirstChange()"
+      type="number"
+      name="firstAmount"
+      [(ngModel)]="firstAmount"
+      id="firstAmount"
+    />
+  </div>
+  <div>
+    <label for="secondCurrency">amount</label>
+    <select
+      (change)="onCurrencyCanage()"
+      name="secondCurrency"
+      id="secondCurrency"
+      [(ngModel)]="secondCurrency"
+    >
+      <option
+        *ngFor="let currency of availableCurrencies"
+        value="{{ currency }}"
+      >
+        {{ currency }}
+      </option>
+    </select>
+    <label for="secondAmount">amount</label>
+    <input
+      (change)="onSecondChange()"
+      (input)="onSecondChange()"
+      type="number"
+      name="secondAmount"
+      [(ngModel)]="secondAmount"
+      id="secondAmount"
+    />
+  </div>
+</form>
