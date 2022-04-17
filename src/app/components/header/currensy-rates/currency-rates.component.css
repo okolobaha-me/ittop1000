@@ -1,9 +1,0 @@
-.currency-rate-item:nth-child(2n + 1) {
-  background-color: var(--main-color);
-  color: var(--contrast-color);
-}
-
-.currency-rate-item:nth-child(2n + 2) {
-  background-color: var(--contrast-color);
-  color: var(--main-color);
-}
