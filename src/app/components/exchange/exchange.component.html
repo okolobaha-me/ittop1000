@@ -1,6 +1,7 @@
 <form>
-  <div>
-    <label for="firstCurrency">amount</label>
+  <div class="input-wrapper">
+    <label for="firstCurrency" class="hidden">First currency</label>
+
     <select
       (change)="onCurrencyCanage()"
       name="firstCurrency"
@@ -14,7 +15,9 @@
         {{ currency }}
       </option>
     </select>
-    <label for="firstAmount">amount</label>
+
+    <label for="firstAmount" class="hidden">First amount</label>
+
     <input
       (change)="onFirstChange()"
       (input)="onFirstChange()"
@@ -22,10 +25,25 @@
       name="firstAmount"
       [(ngModel)]="firstAmount"
       id="firstAmount"
+      min="0"
     />
   </div>
-  <div>
-    <label for="secondCurrency">amount</label>
+  <span class="arrow">{{ currentInput === "first" ? "=>" : "<=" }}</span>
+  <div class="input-wrapper">
+    <label for="secondAmount" class="hidden">Second amount</label>
+
+    <input
+      (change)="onSecondChange()"
+      (input)="onSecondChange()"
+      type="number"
+      name="secondAmount"
+      [(ngModel)]="secondAmount"
+      id="secondAmount"
+      min="0"
+    />
+
+    <label for="secondCurrency" class="hidden">Second currency</label>
+
     <select
       (change)="onCurrencyCanage()"
       name="secondCurrency"
@@ -39,14 +57,5 @@
         {{ currency }}
       </option>
     </select>
-    <label for="secondAmount">amount</label>
-    <input
-      (change)="onSecondChange()"
-      (input)="onSecondChange()"
-      type="number"
-      name="secondAmount"
-      [(ngModel)]="secondAmount"
-      id="secondAmount"
-    />
   </div>
 </form>

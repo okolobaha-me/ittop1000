@@ -1,0 +1,11 @@
+.currency-pair-wrapper {
+  font-size: 16px;
+  width: 550px;
+  background-color: inherit;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 200px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 7px 15px;
+}

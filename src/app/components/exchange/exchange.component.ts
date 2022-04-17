@@ -12,7 +12,7 @@ export class ExchangeComponent implements OnInit {
   firstCurrency: string;
   secondAmount: number;
   secondCurrency: string;
-  currentInput: 'first' | 'second';
+  currentInput: 'first' | 'second' = 'first';
 
   availableCurrencies: string[] = [baseCurrency, ...currencyRates];
 
@@ -44,7 +44,7 @@ export class ExchangeComponent implements OnInit {
         this.secondCurrency
       )
       .subscribe((r) => {
-        this.secondAmount = r.result;
+        this.secondAmount = +r.result.toFixed(4);
       });
   }
 
@@ -61,7 +61,7 @@ export class ExchangeComponent implements OnInit {
         this.firstCurrency
       )
       .subscribe((r) => {
-        this.firstAmount = r.result;
+        this.firstAmount = +r.result.toFixed(4);
       });
   }
 }
